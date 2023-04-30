@@ -218,6 +218,18 @@ li{
     color: white;
 }
 
+/*Media Queries*/
+@media screen and (max-width: 1275px){
+    nav a{
+        display: none;
+    }
+    .btn_Menu{
+        font-size: 25px;
+        cursor: pointer;
+        display: inline;
+    }
+}
+
 
 /*Media Queries*/
 @media screen and (max-width: 768px){
