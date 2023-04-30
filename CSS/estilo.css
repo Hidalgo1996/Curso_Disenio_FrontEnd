@@ -8,6 +8,7 @@
 /*Menú*/
 .Contenedor_Menu{
     display: flex;
+    justify-content: space-between;
     align-items: center;
     background-color: RGB(22, 13, 159);
     margin: 2px;
@@ -23,10 +24,14 @@
 }
 
 /*Color para la cinta opciones*/
+nav{
+    display: flex;
+}
+
 nav a{
     color: white;
     text-decoration: none;
-    margin: 35px;
+    margin: 30px;
     cursor: pointer;
 }
 
@@ -35,6 +40,19 @@ nav a:hover{
     color: yellow;
 }
 
+/*Estilo al boton*/
+.btn_Menu :hover{
+    color: yellow;
+}
+.btn_Menu{
+    margin-right: 30px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    display: none;
+}
+
+/*Header*/
 .Contenedor_Header{
     /*Para aplicar un centrar, primero debe ser un flex*/
     display: flex;
@@ -198,4 +216,129 @@ ul li:before {
 }
 li{
     color: white;
+}
+
+
+/*Media Queries*/
+@media screen and (max-width: 768px){
+    /*Menu*/
+    nav a{
+        display: none;
+    }
+    .btn_Menu{
+        font-size: 25px;
+        cursor: pointer;
+        display: inline;
+    }
+    /*Banner*/
+    .Contenedor_Header_Img{
+        height: 40vh;
+        width: 100%;
+        box-shadow: -1px 5px 8px 1px rgba(0,0,0,0.75);
+        -webkit-box-shadow: -1px 5px 8px 1px rgba(0,0,0,0.75);
+        -moz-box-shadow: -1px 5px 8px 1px rgba(0,0,0,0.75);
+        border-radius: 5px;
+    }
+
+    /*Titulo sección nosotros contendor general*/
+    .Section_Nosotros{
+        font-size: 10px;
+    }
+    .Section_Encabezado{
+        display: flex;
+        justify-content: center;
+        margin: 30px;
+        font-weight: bold;
+        font-size: 15px;
+        color: RGB(22, 15, 159);
+    }
+    .Section_Nosotros_Es{
+        margin-left: 20px;
+        margin-right: 15px;
+        width: 100vh;
+    }
+    .Section_Nosotros_En{
+        margin-right: 20px;
+        margin-left: 15px;
+        width: 100vh;
+    }
+    .Section_Nosotros_Es_Quienes{
+        font-size: 10px;
+        font-weight: bold;
+    }
+    .Section_Nosotros_Es_We{
+        font-weight: bold;
+        font-size: 10px;
+    }
+    section h1{
+        font-size: 10px;
+    }
+    .Contenedor_Article_Encabezado{
+        margin-top: 25px;
+        font-size: 15px;
+    }
+    /*Article general*/
+    .Contenedor_Article_Parrafo{
+        justify-content: center;
+        font-size: 9px;
+    }
+    .Contenedor_Article_Parrafo_Img{
+        height: 25em;
+        width: 235em;
+
+        /*Util, pero no aplica
+        background-size: contain;*/
+        margin-left: 20px;
+        margin-right: 15px;
+    }
+    .Contenedor_Article_Parrafo_Pa{
+        margin-right: 20px;
+        margin-left: 15px;
+    }
+    .enviar{
+        font-size: 9px;
+    }
+    /*Footer*/
+    
+    .Contenedor_Footer{
+        justify-content: space-around;
+        width: 100vw;
+        padding: 2px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        font-size: 9px;
+        /*
+        width: 100vw;
+        height: 100vh;
+        */
+    }
+    footer{
+        width: 100vw;
+        padding: 0px;
+        margin: 0px;
+    }
+    .Contenedor_Footer_Logo img{
+        height: 55px;
+        width: 95px;
+    }
+    .Titulo_Contacto{
+        font-size: 10px;
+    }
+    .Contenedor_Footer_Contacto{
+        width: 100px;
+        margin: 2px;
+        padding: 1px;
+        margin: 0px;
+    }
+    .Titulo_Nosotros{
+        font-size: 10px;
+    }
+    .Contenedor_Footer_Nosotros{
+        width: 150px;
+        margin: 2px;
+        padding: 1px;
+        margin: 0px;
+    }
 }
