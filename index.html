@@ -13,11 +13,20 @@
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
+            <!--Para utilizar la transición del banner-->
+            <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+
             <link rel="stylesheet" type="text/css" href="CSS/estilo.css">
             <title>PROYECTO INTEGRADOR: TUTI</title>
         </head>
 
         <body>
+            <!--Llamar al JS EXTERNO-->
+            <script src="JavaScript.js/funcionalidad.js"></script>
+
+            <!--Implementa la transición del banner-->
+            <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+            
             <!--PARA AÑADIR ICONOS-->
             <script src="https://kit.fontawesome.com/75b4b6bc37.js" crossorigin="anonymous"></script>
             
@@ -31,7 +40,7 @@
                 <!--Panel de navegación-->
                 
                 <nav>
-                    <ul>
+                    <ul class="opciones_Menu">
                         <a href="#"><i class="fa-solid fa-house"></i> INICIO</a>
                         <a href="#"><i class="fa-solid fa-circle-info"></i> Tuti INFORMA</a>
                         <a href="#"><i class="fa-solid fa-people-group"></i> SOBRE NOSOTROS</a>
@@ -49,9 +58,30 @@
 
             <!--Banner-->
             <header>
+                <!--Para la transición del banner-->
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                      <!-- Slides -->
+                      <div class="swiper-slide"><img src="IMAGEN/imagen_Tuti.jpg" class="imagenPrimera"></div>
+                      <div class="swiper-slide"><img src="IMAGEN/imagen_Tuti2.jpeg" class="imagenPrimera"></div>
+                    </div>
+
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+                  
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                  
+                    <!-- If we need scrollbar -->
+                    <div class="swiper-scrollbar"></div>
+                </div>
+
+                <!--
                 <div class="Contenedor_Header">
                     <img class="Contenedor_Header_Img" src="IMAGEN/imagen_Tuti.jpg">
-                </div>
+                </div>-->
             </header>
 
             <section>
@@ -130,7 +160,7 @@
                 <div class="Contenedor_Article_Parrafo">
                     <div class="Contenedor_Article_Parrafo_Img">
                         <!--<img src="IMAGEN/cajerostuti-tuti-1.jpg" alt="No se pudo visualizar el contenido">-->
-                    </div>
+                    </div><br>
 
                     <div class="Contenedor_Article_Parrafo_Pa">
                         <p>Crece como profesional en un ambiente positivo y estimulante, donde el compañerismo es el ingrediente principal. En TuTi contamos contigo y creemos en tus posibilidades. <strong>En TuTi tú importas.</strong></p><br>
@@ -165,5 +195,37 @@
                     </div>
                 </div>
             </footer>
+
+            <script>
+                /*BANNER*/
+                 const swiper = new Swiper('.swiper', {
+                    // Optional parameters
+                    direction: 'horizontal',
+                    loop: true,
+                    // If we need pagination
+                    pagination: {
+                        el: '.swiper-pagination',
+                    },
+
+                    // Navigation arrows
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+
+                    // And if we need scrollbar
+                    scrollbar: {
+                        el: '.swiper-scrollbar',
+                    },
+                });
+
+                /*creacion del boton menu movil*/
+                const hamburger = document.querySelector('.btn_Menu');
+                const menu = document.querySelector('.opciones_Menu');
+                
+                hamburger.addEventListener('click',()=>{
+                    menu.classList.toggle('show');
+                });
+            </script>
         </body>
     </html>

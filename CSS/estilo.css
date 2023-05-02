@@ -7,11 +7,12 @@
 /*MAQUETACIÓN EL FLEXBOX*/
 /*Menú*/
 .Contenedor_Menu{
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: RGB(22, 13, 159);
-    margin: 2px;
+    margin: 0px;
     padding: 10px;
     font-size: 14px;
     font-family: 'Roboto', sans-serif;
@@ -53,21 +54,23 @@ nav a:hover{
 }
 
 /*Header*/
+/*
 .Contenedor_Header{
-    /*Para aplicar un centrar, primero debe ser un flex*/
+
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 10px;
-}
+}*/
 
+/*
 .Contenedor_Header_Img{
     height: 85vh;
     width: 97%;
     box-shadow: -1px 5px 8px 1px rgba(0,0,0,0.75);
     -webkit-box-shadow: -1px 5px 8px 1px rgba(0,0,0,0.75);
     -moz-box-shadow: -1px 5px 8px 1px rgba(0,0,0,0.75);
-}
+}*/
 
 /*Diseño del Selection*/
 section{
@@ -173,6 +176,7 @@ p{
     background-color: RGB(22, 13, 159);
     align-items: start;
     color: yellow;
+    margin: 0;
     padding: 50px;
     padding-left: 150px;
     padding-right: 150px;
@@ -223,26 +227,64 @@ li{
     nav a{
         display: none;
     }
+
     .btn_Menu{
+        display: block;
         font-size: 25px;
         cursor: pointer;
         display: inline;
     }
+
+    /*Funcion del menu movil*/
+    .opciones_Menu{
+        display: none;
+        background-color: rgb(57, 50, 47);
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 90px;
+        left: -100%;
+        text-align: center;
+        transition: all .4s;
+        flex-direction: column;
+        z-index: 99;
+    }
+
 }
 
 
 /*Media Queries*/
 @media screen and (max-width: 768px){
-    /*Menu*/
     nav a{
-        display: none;
+        display: inline;
+        display: block;
     }
+
+    /*Menu*/
     .btn_Menu{
+        display: block;
         font-size: 25px;
         cursor: pointer;
         display: inline;
     }
+
+    /*Funcion del menu movil*/
+    .opciones_Menu{
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(57, 50, 47);
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 90px;
+        left: -100%;
+        text-align: center;
+        transition: all .4s;
+        z-index: 99;
+    }
+
     /*Banner*/
+    /*
     .Contenedor_Header_Img{
         height: 40vh;
         width: 100%;
@@ -250,10 +292,12 @@ li{
         -webkit-box-shadow: -1px 5px 8px 1px rgba(0,0,0,0.75);
         -moz-box-shadow: -1px 5px 8px 1px rgba(0,0,0,0.75);
         border-radius: 5px;
-    }
+    }*/
 
     /*Titulo sección nosotros contendor general*/
     .Section_Nosotros{
+        flex-direction: column;
+        align-items: center;
         font-size: 10px;
     }
     .Section_Encabezado{
@@ -266,13 +310,11 @@ li{
     }
     .Section_Nosotros_Es{
         margin-left: 20px;
-        margin-right: 15px;
-        width: 100vh;
+        margin-right: 20px;
     }
     .Section_Nosotros_En{
         margin-right: 20px;
-        margin-left: 15px;
-        width: 100vh;
+        margin-left: 20px;
     }
     .Section_Nosotros_Es_Quienes{
         font-size: 10px;
@@ -291,15 +333,16 @@ li{
     }
     /*Article general*/
     .Contenedor_Article_Parrafo{
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
         font-size: 9px;
     }
     .Contenedor_Article_Parrafo_Img{
-        height: 25em;
-        width: 235em;
+        height: 200px;
+        width: 280px;
 
-        /*Util, pero no aplica
-        background-size: contain;*/
+        background-size: contain;
         margin-left: 20px;
         margin-right: 15px;
     }
@@ -353,4 +396,18 @@ li{
         padding: 1px;
         margin: 0px;
     }
+}
+
+.swiper { 
+    width: 100%;
+    height: 580px;
+}
+
+.imagenPrimera{
+    height: 555px;
+    width: 100%;
+    object-fit:cover;
+}
+.show{
+    left: 0;
 }
