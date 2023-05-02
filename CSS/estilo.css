@@ -225,9 +225,11 @@ li{
 /*Media Queries*/
 @media screen and (max-width: 1275px){
     nav a{
-        display: none;
+        display: inline;
+        display: block;
     }
 
+    /*Menu*/
     .btn_Menu{
         display: block;
         font-size: 25px;
@@ -237,7 +239,8 @@ li{
 
     /*Funcion del menu movil*/
     .opciones_Menu{
-        display: none;
+        display: flex;
+        flex-direction: column;
         background-color: rgb(57, 50, 47);
         position: fixed;
         width: 100%;
@@ -246,10 +249,8 @@ li{
         left: -100%;
         text-align: center;
         transition: all .4s;
-        flex-direction: column;
         z-index: 99;
     }
-
 }
 
 
